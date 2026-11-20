@@ -1,0 +1,21 @@
+html, body { margin: 0; min-height: 100%; background: #17101f; color: #f4eef7; font: 15px/1.4 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-size: 30px; letter-spacing: 0.02em; }
+.controls > p { margin: 0; color: #b9a8c4; }
+.group-label { font-weight: 700; display: block; margin-bottom: 6px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row button { flex: 1; }
+button { font: inherit; font-weight: 700; padding: 9px 10px; border: 1px solid #6b5578; border-radius: 6px; background: #2a1d38; color: #f4eef7; cursor: pointer; }
+button.on { background: #ff5e62; border-color: #ff5e62; color: #fff; }
+button[data-export] { background: #f4eef7; color: #17101f; border-color: #f4eef7; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
+input[type=text], select { font: inherit; padding: 8px; border: 1px solid #6b5578; border-radius: 6px; background: #241a2e; color: #f4eef7; }
+input[type=range] { width: 100%; accent-color: #ff5e62; }
+fieldset.slot { border: 1px solid #6b5578; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 10px; margin: 0; }
+fieldset.slot legend { font-weight: 800; padding: 0 6px; }
+#status { color: #ffd76e; min-height: 1.2em; }
+canvas { width: min(78vh, 62vw); height: auto; aspect-ratio: 1; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); flex: none; position: sticky; top: 24px; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover canvas { width: 100vw; height: 100vh; aspect-ratio: auto; box-shadow: none; position: static; }

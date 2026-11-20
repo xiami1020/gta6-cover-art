@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Maker — GTA-style cover art</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Vice Cover Maker</h1>
+    <p>Your photos, made into GTA-style multi-panel cover art. Everything runs offline, in your browser.</p>
+
+    <div class="group" role="group" aria-label="Layout">
+      <span class="group-label">Layout</span>
+      <div class="row">
+        <button type="button" data-group="layout" data-value="collage" class="on">Collage</button>
+        <button type="button" data-group="layout" data-value="hero">Hero</button>
+        <button type="button" data-group="layout" data-value="triptych">Triptych</button>
+      </div>
+    </div>
+
+    <div class="group" role="group" aria-label="Look">
+      <span class="group-label">Look</span>
+      <div class="row">
+        <button type="button" data-group="look" data-value="sunset" class="on">Sunset</button>
+        <button type="button" data-group="look" data-value="neon">Neon Nights</button>
+        <button type="button" data-group="look" data-value="noir">Noir</button>
+      </div>
+    </div>
+
+    <fieldset class="slot">
+      <legend>Photo A — main panel</legend>
+      <label>Upload <input id="photo0" type="file" accept="image/*"></label>
+      <label>Sample
+        <select id="sample0">
+          <option value="">— choose —</option>
+          <option value="pier">Pier</option>
+          <option value="boulevard">Boulevard</option>
+        </select>
+      </label>
+      <label>Zoom <input id="zoom0" type="range" min="1" max="2.5" step="0.05" value="1"></label>
+      <label>Pan X <input id="panx0" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+      <label>Pan Y <input id="pany0" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+    </fieldset>
+
+    <fieldset class="slot">
+      <legend>Photo B — side panel</legend>
+      <label>Upload <input id="photo1" type="file" accept="image/*"></label>
+      <label>Sample
+        <select id="sample1">
+          <option value="">— choose —</option>
+          <option value="pier">Pier</option>
+          <option value="boulevard">Boulevard</option>
+        </select>
+      </label>
+      <label>Zoom <input id="zoom1" type="range" min="1" max="2.5" step="0.05" value="1"></label>
+      <label>Pan X <input id="panx1" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+      <label>Pan Y <input id="pany1" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+    </fieldset>
+
+    <fieldset class="slot">
+      <legend>Photo C — third panel</legend>
+      <label>Upload <input id="photo2" type="file" accept="image/*"></label>
+      <label>Sample
+        <select id="sample2">
+          <option value="">— choose —</option>
+          <option value="pier">Pier</option>
+          <option value="boulevard">Boulevard</option>
+        </select>
+      </label>
+      <label>Zoom <input id="zoom2" type="range" min="1" max="2.5" step="0.05" value="1"></label>
+      <label>Pan X <input id="panx2" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+      <label>Pan Y <input id="pany2" type="range" min="-0.5" max="0.5" step="0.05" value="0"></label>
+    </fieldset>
+
+    <label>Title <input id="title" type="text" maxlength="24" value="VICE CITY"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="A SUNSET STORY"></label>
+
+    <div class="group">
+      <span class="group-label">Export PNG</span>
+      <div class="row">
+        <button type="button" data-export="1080x1080">1080 × 1080</button>
+        <button type="button" data-export="1080x1350">1080 × 1350</button>
+        <button type="button" data-export="1920x1080">1920 × 1080</button>
+      </div>
+    </div>
+    <p id="status" role="status"></p>
+  </section>
+  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
